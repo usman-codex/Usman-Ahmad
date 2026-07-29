@@ -1,0 +1,92 @@
+        <section id="contact">
+            <div class="container-fluid">
+                <div class="section-intro">
+                    <h4>Contact</h4>
+                    <h2>Let's work together</h2>
+                </div>
+                <div class="contact-grid">
+                    <div class="contact-info">
+                        <div class="contact-card">
+                            <h4><i class="fas fa-comment-alt"></i> Send A Message</h4>
+                            <p>Have a project in mind? I'd love to hear about it. Fill out the form and I'll get back to you within 24 hours. Let's create something amazing together!</p>
+                        </div>
+                        <div class="contact-card">
+                            <h4><i class="fas fa-envelope"></i> Email</h4>
+                            <p>usmancodex.dev@gmail.com</p>
+                        </div>
+                        <div class="contact-card">
+                            <h4><i class="fas fa-phone"></i> Phone</h4>
+                            <p>+92 322 7690800</p>
+                        </div>
+                        <div class="contact-card">
+                            <h4><i class="fas fa-map-marker-alt"></i> Location</h4>
+                            <p>Johar Town, Lahore, Pakistan</p>
+                        </div>
+                    </div>
+                    <div class="contact-form-container" style="width: 100%;">
+                        <div class="code-editor-window">
+                            <div class="editor-header">
+                                <div class="window-controls">
+                                    <span class="control-dot close"></span>
+                                    <span class="control-dot minimize"></span>
+                                    <span class="control-dot expand"></span>
+                                </div>
+                                <div class="editor-tab active">
+                                    <i class="fab fa-python" style="color: #ffd43b !important; margin-right: 6px;"></i>
+                                    <span>contact_handler.py</span>
+                                </div>
+                            </div>
+                            <div id="contact-res">
+                                <form hx-post="/api/contact-submit" hx-target="#contact-res" hx-swap="innerHTML" class="code-editor-form">
+                                    <div class="editor-body">
+                                        <div class="line-numbers">
+                                            <span>1</span>
+                                            <span>2</span>
+                                            <span>3</span>
+                                            <span>4</span>
+                                            <span>5</span>
+                                            <span>6</span>
+                                            <span>7</span>
+                                            <span>8</span>
+                                            <span>9</span>
+                                            <span>10</span>
+                                            <span>11</span>
+                                            <span>12</span>
+                                            <span>13</span>
+                                            <span>14</span>
+                                        </div>
+                                        <div class="code-content">
+                                            <div class="code-line"><span class="token keyword">class</span> <span class="token class-name">ContactMessage</span>:</div>
+                                            <div class="code-line indent-1"><span class="token keyword">def</span> <span class="token function">__init__</span>(<span class="token parameter">self</span>):</div>
+                                            <div class="code-line indent-2">
+                                                <span class="token parameter">self</span>.name = <span class="token string">"</span><input id="name" type="text" name="name" class="editor-input" placeholder="Your Name" required><span class="token string">"</span>
+                                            </div>
+                                            <div class="code-line indent-2">
+                                                <span class="token parameter">self</span>.email = <span class="token string">"</span><input id="email" type="email" name="email" class="editor-input" placeholder="Your Email" required><span class="token string">"</span>
+                                            </div>
+                                            <div class="code-line indent-2">
+                                                <span class="token parameter">self</span>.phone = <span class="token string">"</span><input id="phone" type="tel" name="phone" class="editor-input" placeholder="Phone Number" required><span class="token string">"</span>
+                                            </div>
+                                            <div class="code-line indent-2">
+                                                <span class="token parameter">self</span>.message = <span class="token string">"""</span>
+                                            </div>
+                                            <div class="code-line indent-3" style="width: 100%;">
+                                                <textarea id="message" name="message" class="editor-textarea" placeholder="Type your message here..." rows="4" required></textarea>
+                                            </div>
+                                            <div class="code-line indent-2">
+                                                <span class="token string">"""</span>
+                                            </div>
+                                            <div class="code-line"></div>
+                                            <div class="code-line indent-1"><span class="token keyword">def</span> <span class="token function">send_message</span>(<span class="token parameter">self</span>):</div>
+                                            <div class="code-line indent-2">
+                                                <span class="token keyword">return</span> <button type="submit" class="btn-editor-submit">self.dispatch()</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

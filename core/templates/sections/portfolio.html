@@ -1,0 +1,85 @@
+<!-- 5. PORTFOLIO SECTION -->
+<section id="portfolio">
+    <div class="container-fluid">
+        <div class="portfolio-heading">
+            <div class="section-intro" style="margin-bottom:0;">
+                <h4>Recent Work</h4>
+                <h2 style="font-family: 'Outfit', sans-serif; font-size: 2.5rem; font-weight: 800; margin-bottom: 8px;">Look at my portfolio and give me your feedback</h2>
+            </div>
+            <a href="{% url 'projects' %}" class="btn-secondary" style="font-family: 'Space Grotesk', sans-serif; font-weight: 700; background: linear-gradient(135deg, #1d6bff 0%, #00f2fe 100%); color: #090e1f; padding: 12px 28px; border-radius: 12px; border: none; box-shadow: 0 4px 15px rgba(0, 242, 254, 0.25); display: inline-flex; align-items: center; gap: 8px;">
+                SEE ALL PROJECTS <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
+        <div class="stats-grid">
+            <div class="stat-card">
+                <span>50+</span>
+                <p>Completed Projects</p>
+            </div>
+            <div class="stat-card">
+                <span>94%</span>
+                <p>Positive Rating</p>
+            </div>
+        </div>
+        <div class="portfolio-grid">
+            {% if projects %}
+                {% for p in projects %}
+                <article class="portfolio-item">
+                    <div class="portfolio-img-wrap">
+                        {% if p.image %}
+                            <img src="{{ p.image.url }}" alt="{{ p.title }}">
+                        {% else %}
+                            <div style="min-height:260px; display:flex; align-items:center; justify-content:center; background: linear-gradient(135deg, rgba(29,107,255,.22), rgba(77,204,255,.12));">
+                                <i class="fas fa-image fa-3x" style="opacity:.6;"></i>
+                            </div>
+                        {% endif %}
+                        
+                        <!-- Hover Overlay with View Button -->
+                        <div class="portfolio-overlay">
+                            <a class="btn-portfolio-view text-decoration-none" href="{% url 'projects' %}">
+                                <i class="fas fa-search-plus"></i> View
+                            </a>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <span class="portfolio-category">{{ p.category }}</span>
+                        <h3 class="portfolio-title">{{ p.title }}</h3>
+                        <p class="portfolio-desc">
+                            {{ p.description }}
+                        </p>
+                        
+                        {% if p.tags_list %}
+                            <div class="d-flex flex-wrap gap-2 mt-auto">
+                                {% for tag in p.tags_list|slice:":3" %}
+                                    {% with tag_lower=tag.lower %}
+                                        <span style="font-size: 0.72rem; padding: 5px 12px; border-radius: 8px; font-weight: 600; font-family: 'Space Grotesk', sans-serif; transition: all 0.3s ease;
+                                        {% if 'django' in tag_lower or 'python' in tag_lower %}
+                                            background: rgba(16, 185, 129, 0.12); color: #10b981; border: 1.5px solid rgba(16, 185, 129, 0.3);
+                                        {% elif 'react' in tag_lower or 'tailwind' in tag_lower or 'dashboard' in tag_lower or 'control' in tag_lower %}
+                                            background: rgba(0, 242, 254, 0.12); color: #00f2fe; border: 1.5px solid rgba(0, 242, 254, 0.3);
+                                        {% elif 'rest' in tag_lower or 'jwt' in tag_lower or 'cors' in tag_lower %}
+                                            background: rgba(168, 85, 247, 0.12); color: #a855f7; border: 1.5px solid rgba(168, 85, 247, 0.3);
+                                        {% elif 'websocket' in tag_lower or 'redis' in tag_lower or 'channels' in tag_lower or 'real-time' in tag_lower %}
+                                            background: rgba(245, 158, 11, 0.12); color: #fb923c; border: 1.5px solid rgba(245, 158, 11, 0.35);
+                                        {% elif 'supabase' in tag_lower or 'postgres' in tag_lower or 'db' in tag_lower %}
+                                            background: rgba(62, 207, 142, 0.12); color: #3ecf8e; border: 1.5px solid rgba(62, 207, 142, 0.3);
+                                        {% elif 'firebase' in tag_lower or 'auth' in tag_lower or 'firestore' in tag_lower or 'secure' in tag_lower %}
+                                            background: rgba(251, 191, 36, 0.12); color: #fbbf24; border: 1.5px solid rgba(251, 191, 36, 0.3);
+                                        {% else %}
+                                            background: rgba(29, 107, 255, 0.12); color: #60a5fa; border: 1.5px solid rgba(29, 107, 255, 0.3);
+                                        {% endif %}
+                                        ">{{ tag }}</span>
+                                    {% endwith %}
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
+                </article>
+                {% endfor %}
+            {% else %}
+                <div class="card" style="grid-column:1/-1; text-align:center; padding:60px 30px; background: rgba(16, 28, 54, 0.4); border: 1px solid rgba(29, 107, 255, 0.15);">
+                    <p class="text-muted">No projects added yet. Update admin to show portfolio items.</p>
+                </div>
+            {% endif %}
+        </div>
+    </div>
+</section>

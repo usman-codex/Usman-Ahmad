@@ -1,0 +1,85 @@
+        <section id="about">
+            <div class="container-fluid">
+                <div class="section-intro">
+                    <h4>About Me</h4>
+                    <h2>I build scalable Django applications</h2>
+                </div>
+                <div class="about-grid d-grid">
+                    <div class="about-visual-card animate__animated animate__fadeInLeft" style="position: relative; display: flex; align-items: center; justify-content: center; overflow: visible;">
+                        <div style="position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; z-index: 2;">
+                            <!-- Glowing Background Effects -->
+                            <div class="about-glow-1"></div>
+                            <div class="about-glow-2"></div>
+                            
+                            <!-- Main Image Showcase with Rounded Clip & Border Glow -->
+                            <div class="about-image-container">
+                                <img src="/media/about/about-main.jpg" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=900&q=80';" alt="About Usman Ahmad" class="about-main-img">
+                                <div class="about-image-overlay"></div>
+                            </div>
+
+                            <!-- Floating Glassmorphic Terminal for Skills/Dev stats -->
+                            <div class="floating-badge about-badge-terminal">
+                                <div class="terminal-header">
+                                    <span class="terminal-dot red"></span>
+                                    <span class="terminal-dot yellow"></span>
+                                    <span class="terminal-dot green"></span>
+                                    <span class="terminal-title">system_info.sh</span>
+                                </div>
+                                <div class="terminal-body" style="font-family: 'JetBrains Mono', monospace; font-size: 0.76rem; width: 100%;">
+                                    $ ./stats.sh<br>
+                                    <span class="token keyword" style="color: #f43f5e;">Status:</span> <span class="token string" style="color: #34d399;">Active & Hiring</span><br>
+                                    <span class="token keyword" style="color: #f43f5e;">Exp:</span> <span class="token class-name" style="color: #60a5fa;">2+ Years Web Dev</span><br>
+                                    <span class="token keyword" style="color: #f43f5e;">Loc:</span> <span class="token string" style="color: #ffd43b;">Remote (Asia)</span>
+                                </div>
+                            </div>
+
+                            <!-- Floating Tech Badges -->
+                            <div class="floating-badge badge-about-1">
+                                <i class="fas fa-check-circle text-success me-2" style="color: #34d399 !important;"></i>
+                                <span>Django Architect</span>
+                            </div>
+                            <div class="floating-badge badge-about-2">
+                                <i class="fab fa-react text-info me-2" style="color: #60a5fa !important;"></i>
+                                <span>React Integrator</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="mb-4">
+                            <span class="text-primary fw-bold text-uppercase" style="font-size: 0.85rem; letter-spacing: 2px; display: inline-block; margin-bottom: 8px;">EMPOWERING DIGITAL VISION</span>
+                            <h3 class="fw-bold text-white mb-3" style="font-size: 1.8rem; line-height: 1.35; font-family: 'Plus Jakarta Sans', sans-serif;">Crafting Robust Backend Engines & Modern User Experiences</h3>
+                            <p style="color: #cdd3e6; font-size: 1.05rem; line-height: 1.85; margin-bottom: 20px;">
+                                Hey there! I am <strong class="text-white">Usman Ahmad</strong>, a highly dedicated web developer fueled by a deep <span style="color: var(--primary); font-weight: 600;">passion for coding</span>, system architecture, and robust engineering. With over <strong class="text-white">2+ years of experience</strong>, I specialize in building scalable, secure backend systems with modern Python & Django frameworks, seamlessly integrating them with interactive, responsive frontend technologies.
+                            </p>
+                            <p style="color: #a8b2d1; font-size: 1rem; line-height: 1.8; margin-bottom: 24px;">
+                                My focus is writing highly clean code, developing high-performance REST APIs, and mastering professional web-handling mechanisms (such as rate limiting, cookie-session security, and CORS policies) so that the final application is performant, lightning fast, and absolutely secure.
+                            </p>
+                        </div>
+                        <div class="feature-list d-grid gap-3 mb-4" style="grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));">
+                            <div class="feature-item d-flex align-items-center gap-3 p-3" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 18px; transition: all 0.3s ease;">
+                                <div class="icon text-primary" style="background: rgba(29, 107, 255, 0.1); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; font-size: 1.3rem;"><i class="fas fa-server"></i></div>
+                                <div>
+                                    <h4 class="fw-bold text-white mb-1" style="font-size: 0.95rem; margin-bottom: 0;">Backend & Web Handling</h4>
+                                    <p class="text-muted mb-0" style="font-size: 0.82rem;">Python, Django, API Security, CORS</p>
+                                </div>
+                            </div>
+                            <div class="feature-item d-flex align-items-center gap-3 p-3" style="background: rgba(255, 255, 255, 0.02); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 18px; transition: all 0.3s ease;">
+                                <div class="icon text-primary" style="background: rgba(29, 107, 255, 0.1); width: 48px; height: 48px; display: flex; align-items: center; justify-content: center; border-radius: 14px; font-size: 1.3rem;"><i class="fas fa-magic"></i></div>
+                                <div>
+                                    <h4 class="fw-bold text-white mb-1" style="font-size: 0.95rem; margin-bottom: 0;">Frontend UI Mastery</h4>
+                                    <p class="text-muted mb-0" style="font-size: 0.82rem;">React.js, Next.js, CSS, Animations & Responsive</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-panel">
+                            <div class="tab-buttons">
+                                <button class="tab-btn active" hx-get="/api/bio" hx-target="#tab-body" hx-trigger="click, load">Passion & Bio <strong>01</strong></button>
+                                <button class="tab-btn" hx-get="/api/skills" hx-target="#tab-body" hx-trigger="click">Core Stack <strong>02</strong></button>
+                                <button class="tab-btn" hx-get="/api/education" hx-target="#tab-body" hx-trigger="click">Web Handling <strong>03</strong></button>
+                            </div>
+                            <div id="tab-body" class="tab-content" style="color: var(--muted);">Loading content...</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>

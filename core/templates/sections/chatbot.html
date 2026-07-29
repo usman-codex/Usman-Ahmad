@@ -1,0 +1,23 @@
+<a href="#" id="assist-toggle" class="assist-button" title="AI Assistance" aria-label="AI Assistance">
+    <i class="fas fa-robot"></i>
+</a>
+
+<div class="chat-popup" id="chat-popup">
+    <div class="chat-popup-header">
+        <div>
+            <h4>Ask About Usman</h4>
+            <p style="color: var(--muted); margin:0; font-size:.82rem;">Get answers about Usman Ahmad's skills, work, passion, and plans.</p>
+        </div>
+        <button type="button" id="chat-popup-close" class="btn-secondary" style="padding:10px 12px; min-width:auto;">×</button>
+    </div>
+    <div class="chat-popup-body" id="chat-popup-body">
+        <div class="chat-popup-message ai">Ask a question about Usman Ahmad's skills, experience, projects, passion, or future plans.</div>
+    </div>
+    <form id="chat-popup-form" class="chat-popup-form" action="{% url 'chatbot' %}" method="post">
+        {% csrf_token %}
+        <div class="chat-input-wrapper">
+            <textarea id="chat-popup-input" name="prompt" placeholder="Ask a question..." required></textarea>
+            <button type="submit" class="chat-send-btn" aria-label="Send message"><i class="fas fa-paper-plane"></i></button>
+        </div>
+    </form>
+</div>

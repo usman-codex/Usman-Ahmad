@@ -1,0 +1,17 @@
+# Force Nixpacks to build this as a Python project, bypassing Node.js
+providers = ["python"]
+
+[phases.setup]
+nixPkgs = ["python3", "gcc"]
+
+[phases.install]
+cmds = ["pip install -r requirements.txt"]
+
+[phases.build]
+cmds = [
+    "python manage.py migrate --noinput",
+    "python manage.py collectstatic --noinput"
+]
+
+[start]
+cmd = "gunicorn portfolio.wsgi:application --bind 0.0.0.0:$PORT"

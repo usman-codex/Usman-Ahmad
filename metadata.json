@@ -1,0 +1,8 @@
+{
+  "name": "Usman Ahmad Portfolio",
+  "description": "Portfolio of Usman Ahmad, Backend Web Developer specializing in Python, Django, and REST APIs, featuring a personal AI Assistant chatbot.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
