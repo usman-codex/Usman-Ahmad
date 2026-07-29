@@ -73,11 +73,26 @@
                         </div>
                         <div class="tab-panel">
                             <div class="tab-buttons">
-                                <button class="tab-btn active" hx-get="/api/bio" hx-target="#tab-body" hx-trigger="click, load">Passion & Bio <strong>01</strong></button>
-                                <button class="tab-btn" hx-get="/api/skills" hx-target="#tab-body" hx-trigger="click">Core Stack <strong>02</strong></button>
-                                <button class="tab-btn" hx-get="/api/education" hx-target="#tab-body" hx-trigger="click">Web Handling <strong>03</strong></button>
+                                <button class="tab-btn active" hx-get="/api/bio" hx-target="#tab-body" hx-trigger="click" hx-swap="innerHTML scroll:none show:none">Passion & Bio <strong>01</strong></button>
+                                <button class="tab-btn" hx-get="/api/skills" hx-target="#tab-body" hx-trigger="click" hx-swap="innerHTML scroll:none show:none">Core Stack <strong>02</strong></button>
+                                <button class="tab-btn" hx-get="/api/education" hx-target="#tab-body" hx-trigger="click" hx-swap="innerHTML scroll:none show:none">Web Handling <strong>03</strong></button>
                             </div>
-                            <div id="tab-body" class="tab-content" style="color: var(--muted);">Loading content...</div>
+                            <div id="tab-body" class="tab-content" style="color: var(--muted);">
+                                <div class='animate__animated animate__fadeIn d-grid gap-3'>
+                                    <div class="p-3 border-start border-primary border-4" style="background: rgba(255,255,255,0.02); border-radius: 4px 12px 12px 4px; border-left: 4px solid var(--primary) !important;">
+                                        <h5 class="fw-bold text-white mb-1" style="font-size: 1rem;"><i class="fas fa-heart text-primary me-2"></i> Coding Passion & Philosophy</h5>
+                                        <p class="mb-0 text-muted" style="font-size: 0.9rem; color: #cdd3e6 !important;">I am deeply passionate about crafting elegant, robust backend logic and beautiful user interfaces that make web platforms fast, secure, and delightfully interactive. I love solving complex structural challenges and writing highly maintainable, clean code.</p>
+                                    </div>
+                                    <div class="p-3 border-start border-primary border-4" style="background: rgba(255,255,255,0.02); border-radius: 4px 12px 12px 4px; border-left: 4px solid var(--primary) !important;">
+                                        <h5 class="fw-bold text-white mb-1" style="font-size: 1rem;"><i class="fas fa-history text-primary me-2"></i> Years of Experience</h5>
+                                        <p class="mb-0 text-muted" style="font-size: 0.9rem; color: #cdd3e6 !important;">Over 2+ years of web development experience building backend-focused platforms, database schemas, and seamless frontend integrations.</p>
+                                    </div>
+                                    <div class="p-3 border-start border-primary border-4" style="background: rgba(255,255,255,0.02); border-radius: 4px 12px 12px 4px; border-left: 4px solid var(--primary) !important;">
+                                        <h5 class="fw-bold text-white mb-1" style="font-size: 1rem;"><i class="fas fa-map-marker-alt text-primary me-2"></i> Location</h5>
+                                        <p class="mb-0 text-muted" style="font-size: 0.9rem; color: #cdd3e6 !important;">Lahore, Pakistan (Available for Remote Worldwide Collaboration)</p>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
