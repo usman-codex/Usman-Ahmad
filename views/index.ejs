@@ -1526,64 +1526,112 @@
         }
 
         /* Specific positions for badges */
-        .badge-terminal {
-            top: 40px;
-            left: -35px;
-            width: 250px;
-            flex-direction: column;
-            align-items: stretch;
-            padding: 14px;
-            font-family: 'JetBrains Mono', monospace;
-            border-radius: 14px;
-            border-color: rgba(29, 107, 255, 0.3);
-            cursor: default;
+        .badge-terminal, .about-badge-terminal {
+            position: absolute !important;
+            top: 16px !important;
+            left: 50% !important;
+            transform: translateX(-50%) !important;
+            width: calc(100% - 24px) !important;
+            max-width: 310px !important;
+            z-index: 10 !important;
+            background: rgba(8, 14, 30, 0.90) !important;
+            backdrop-filter: blur(16px) !important;
+            -webkit-backdrop-filter: blur(16px) !important;
+            border: 1px solid rgba(0, 242, 254, 0.4) !important;
+            border-radius: 14px !important;
+            padding: 12px 14px !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(0, 242, 254, 0.15) !important;
+            box-sizing: border-box !important;
+            flex-direction: column !important;
+            align-items: stretch !important;
+            font-family: 'JetBrains Mono', monospace !important;
+            cursor: default !important;
         }
-        .badge-terminal .terminal-header {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-            margin-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-            padding-bottom: 6px;
-        }
-        .badge-terminal .terminal-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            display: inline-block;
-        }
-        .badge-terminal .terminal-dot.red { background: #ff5f56; }
-        .badge-terminal .terminal-dot.yellow { background: #ffbd2e; }
-        .badge-terminal .terminal-dot.green { background: #27c93f; }
-        .badge-terminal .terminal-title {
-            font-size: 0.72rem;
-            color: #a8b2d1;
-            margin-left: 6px;
-            font-weight: 500;
-        }
-        .badge-terminal .terminal-body {
-            font-size: 0.78rem;
-            line-height: 1.5;
-            color: #e2e8f0;
-        }
-        .badge-terminal .token.keyword { color: #f43f5e; }
-        .badge-terminal .token.class-name { color: #60a5fa; }
-        .badge-terminal .token.string { color: #34d399; }
 
-        .badge-tech-1 {
-            top: 260px;
-            right: -30px;
-            animation: float-badge-1 6s ease-in-out infinite;
+        .about-badge-terminal {
+            border-color: rgba(29, 107, 255, 0.45) !important;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.6), 0 0 20px rgba(29, 107, 255, 0.2) !important;
         }
-        .badge-tech-2 {
-            bottom: 60px;
-            left: -20px;
-            animation: float-badge-2 7s ease-in-out infinite;
+
+        .badge-terminal .terminal-header, .about-badge-terminal .terminal-header {
+            display: flex !important;
+            align-items: center !important;
+            gap: 6px !important;
+            margin-bottom: 8px !important;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+            padding-bottom: 6px !important;
         }
+
+        .badge-terminal .terminal-dot, .about-badge-terminal .terminal-dot {
+            width: 8px !important;
+            height: 8px !important;
+            border-radius: 50% !important;
+            display: inline-block !important;
+        }
+        .badge-terminal .terminal-dot.red, .about-badge-terminal .terminal-dot.red { background: #ff5f56 !important; }
+        .badge-terminal .terminal-dot.yellow, .about-badge-terminal .terminal-dot.yellow { background: #ffbd2e !important; }
+        .badge-terminal .terminal-dot.green, .about-badge-terminal .terminal-dot.green { background: #27c93f !important; }
+        .badge-terminal .terminal-title, .about-badge-terminal .terminal-title {
+            font-size: 0.72rem !important;
+            color: #a8b2d1 !important;
+            margin-left: 6px !important;
+            font-weight: 500 !important;
+        }
+        .badge-terminal .terminal-body, .about-badge-terminal .terminal-body {
+            font-size: 0.74rem !important;
+            line-height: 1.45 !important;
+            color: #e2e8f0 !important;
+            word-break: break-word !important;
+        }
+        .badge-terminal .token.keyword { color: #f43f5e !important; }
+        .badge-terminal .token.class-name { color: #60a5fa !important; }
+        .badge-terminal .token.string { color: #34d399 !important; }
+
+        /* Tech Badges on bottom image overlay */
+        .badge-tech-1, .badge-about-1 {
+            position: absolute !important;
+            bottom: 14px !important;
+            left: 12px !important;
+            top: auto !important;
+            right: auto !important;
+            z-index: 10 !important;
+            padding: 7px 12px !important;
+            font-size: 0.76rem !important;
+            font-weight: 600 !important;
+            background: rgba(8, 14, 30, 0.92) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border: 1px solid rgba(0, 242, 254, 0.35) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+            display: flex !important;
+            align-items: center !important;
+            white-space: nowrap !important;
+        }
+
+        .badge-tech-2, .badge-about-2 {
+            position: absolute !important;
+            bottom: 14px !important;
+            right: 12px !important;
+            top: auto !important;
+            left: auto !important;
+            z-index: 10 !important;
+            padding: 7px 12px !important;
+            font-size: 0.76rem !important;
+            font-weight: 600 !important;
+            background: rgba(8, 14, 30, 0.92) !important;
+            backdrop-filter: blur(12px) !important;
+            -webkit-backdrop-filter: blur(12px) !important;
+            border: 1px solid rgba(29, 107, 255, 0.35) !important;
+            border-radius: 12px !important;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.4) !important;
+            display: flex !important;
+            align-items: center !important;
+            white-space: nowrap !important;
+        }
+
         .badge-tech-3 {
-            bottom: -15px;
-            right: 20px;
-            animation: float-badge-3 5.5s ease-in-out infinite;
+            display: none !important;
         }
 
         /* Modern About Showcase Card & Animations */
@@ -1890,27 +1938,27 @@
             }
             .hero-image-container, .about-image-container {
                 width: 100% !important;
-                max-width: 320px !important;
-                height: 320px !important;
+                max-width: 340px !important;
+                height: 400px !important;
                 margin: 0 auto !important;
                 border-radius: 24px !important;
                 position: relative !important;
                 z-index: 2 !important;
             }
             .badge-terminal, .about-badge-terminal {
-                position: relative !important;
-                left: auto !important;
-                right: auto !important;
-                top: auto !important;
-                bottom: auto !important;
-                margin: 16px auto 0 !important;
-                width: 100% !important;
-                max-width: 320px !important;
-                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45) !important;
-                transform: none !important;
+                top: 12px !important;
+                width: calc(100% - 20px) !important;
+                max-width: 300px !important;
+                padding: 10px 12px !important;
             }
-            .badge-tech-1, .badge-tech-2, .badge-tech-3, .badge-about-1, .badge-about-2 {
-                display: none !important;
+            .badge-terminal .terminal-body, .about-badge-terminal .terminal-body {
+                font-size: 0.70rem !important;
+            }
+            .badge-tech-1, .badge-tech-2, .badge-about-1, .badge-about-2 {
+                bottom: 12px !important;
+                padding: 6px 10px !important;
+                font-size: 0.72rem !important;
+                display: flex !important;
             }
             .scroll-down-indicator {
                 display: none !important;
@@ -1948,11 +1996,22 @@
 
         @media (max-width: 480px) {
             .hero-image-container, .about-image-container {
-                max-width: 280px !important;
-                height: 280px !important;
+                max-width: 290px !important;
+                height: 360px !important;
             }
             .badge-terminal, .about-badge-terminal {
-                max-width: 280px !important;
+                top: 10px !important;
+                width: calc(100% - 16px) !important;
+                max-width: 270px !important;
+                padding: 8px 10px !important;
+            }
+            .badge-terminal .terminal-body, .about-badge-terminal .terminal-body {
+                font-size: 0.68rem !important;
+            }
+            .badge-tech-1, .badge-tech-2, .badge-about-1, .badge-about-2 {
+                bottom: 10px !important;
+                padding: 5px 8px !important;
+                font-size: 0.68rem !important;
             }
             .stats-grid { grid-template-columns: 1fr !important; gap: 16px !important; }
             .stat-card { padding: 20px !important; }
